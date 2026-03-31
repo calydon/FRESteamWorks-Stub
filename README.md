@@ -25,9 +25,11 @@ This allows affected games to launch normally **without internet**, and
 ## Structure
 
 /src
-FRESteamWorks_stub.c
-FlashRuntimeExtensions.h
-FRESteamWorks.def
+    FRESteamWorks_stub.c
+    FRESteamWorks.def
+    /air_headers
+        FlashRuntimeExtensions.h
+
 
 ## Building (MinGW)
 
