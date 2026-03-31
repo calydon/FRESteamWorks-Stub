@@ -1,0 +1,9 @@
+LIBRARY FRESteamWorks
+
+EXPORTS
+    FREExtensionInitializer
+    FREExtensionFinalizer
+    FREContextInitializer
+    FREContextFinalizer
+    ExtInitializer = FREExtensionInitializer
+    ExtFinalizer   = FREExtensionFinalizer

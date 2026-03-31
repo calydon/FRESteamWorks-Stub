@@ -1,0 +1,37 @@
+#ifndef FRE_MINIMAL_H
+#define FRE_MINIMAL_H
+
+#include <stdint.h>
+
+typedef void* FREContext;
+
+typedef struct {
+    const uint8_t* name;
+    void* functionData;
+    void* function;
+} FRENamedFunction;
+
+// Rename typedefs to avoid collisions with exported function names
+typedef void (*FREContextInitializerFunc)(
+    void* extData,
+    const uint8_t* ctxType,
+    FREContext ctx,
+    uint32_t* numFunctionsToSet,
+    const FRENamedFunction** functionsToSet
+);
+
+typedef void (*FREContextFinalizerFunc)(
+    FREContext ctx
+);
+
+typedef void (*FREExtensionInitializerFunc)(
+    void** extDataToSet,
+    FREContextInitializerFunc* ctxInitializerToSet,
+    FREContextFinalizerFunc* ctxFinalizerToSet
+);
+
+typedef void (*FREExtensionFinalizerFunc)(
+    void* extData
+);
+
+#endif
